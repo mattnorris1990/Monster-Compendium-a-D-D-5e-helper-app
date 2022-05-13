@@ -1,5 +1,12 @@
 .App {
-  text-align: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #282c34;
+  margin: 0px;
+  color: white;
+}
+
+.monsterContainer {
+  margin: 0;
 }
 
 .App-logo {
@@ -35,4 +42,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.stat-block {
+  max-width: 60%;
+  margin: auto;
+  background-color: #FDF1DC;
+  border: 5px solid rgb(161, 92, 92);
+  text-align: left;
+  color: #922610;
+  padding: 3%;
+}
+
+.block-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+}
+
+hr {
+  border: 1px solid #922610;
+  
 }
