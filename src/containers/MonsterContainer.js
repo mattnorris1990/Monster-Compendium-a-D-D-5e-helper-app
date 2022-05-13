@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import MonsterSelect from "../components/MonsterSelect"
 import MonsterDetail from "../components/MonsterDetail"
+import MonsterSelectByCr from "../components/MonsterSelectByCr"
 
 const MonsterContainer = () => {
 
@@ -13,6 +14,22 @@ const MonsterContainer = () => {
     useEffect(() => {
         getMonsters();
     }, [])
+
+    const getMonstersByCr = (cr) => {
+        fetch("https://www.dnd5eapi.co/api/monsters?challenge_rating=" + cr)
+        .then(res => res.json())
+        .then(monsters => setMonstersLinksArray(monsters.results))
+        .then(() => {
+            const promisesArray = monstersLinksArray.map((monster) => {
+                return fetch(getMonsterUrl(monster))
+                .then(res => (res.json()))
+                
+            })
+            
+            Promise.all(promisesArray).then(res => setMonsters(res))
+            .catch(error => console.error(error))
+        })
+    }
 
 
     const getMonsters = () => {
@@ -44,7 +61,9 @@ const MonsterContainer = () => {
     return (
         <>
 
-                <MonsterSelect monsters= {monsters} onMonsterSelected = {onMonsterSelected}/>
+                <MonsterSelect monsters= {monsters} onMonsterSelected = 
+                {onMonsterSelected}/>
+                <MonsterSelectByCr getMonstersByCr = {getMonstersByCr}/>
                 {selectedMonster ? <MonsterDetail mon = {selectedMonster} /> : null }
         </>
     )
