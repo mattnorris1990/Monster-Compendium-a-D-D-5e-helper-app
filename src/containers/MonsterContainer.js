@@ -18,7 +18,7 @@ const MonsterContainer = () => {
 
     useEffect(() => {
         const results = monsters.filter((monster) => {
-                return monster.challenge_rating === parseInt(cr)
+                return monster.challenge_rating == cr
             })
             setFilteredMonsters(results)
     }, [cr])
