@@ -55,7 +55,7 @@ const MonsterContainer = () => {
     }
 
     const onMonsterSelected = (index) => {
-        setSelectedMonster(monsters[index])
+        setSelectedMonster(filteredMonsters[index])
     }
 
 
