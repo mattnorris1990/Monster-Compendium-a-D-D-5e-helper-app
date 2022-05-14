@@ -9,27 +9,29 @@ const MonsterContainer = () => {
     const [selectedMonster, setSelectedMonster] = useState(null)
     const [selectedMonsterDetails, setSelectedMonsterDetails] =useState(null)
     const [monsters, setMonsters] = useState([])
+    const [filteredMonsters, setFilteredMonsters] = useState([])
+    const [cr, setCr] = useState(null)
 
 
     useEffect(() => {
         getMonsters();
     }, [])
 
-    const getMonstersByCr = (cr) => {
-        fetch("https://www.dnd5eapi.co/api/monsters?challenge_rating=" + cr)
-        .then(res => res.json())
-        .then(monsters => setMonstersLinksArray(monsters.results))
-        .then(() => {
-            const promisesArray = monstersLinksArray.map((monster) => {
-                return fetch(getMonsterUrl(monster))
-                .then(res => (res.json()))
-                
+    useEffect(() => {
+        const results = monsters.filter((monster) => {
+                return monster.challenge_rating === parseInt(cr)
             })
-            
-            Promise.all(promisesArray).then(res => setMonsters(res))
-            .catch(error => console.error(error))
-        })
+            setFilteredMonsters(results)
+    }, [cr])
+
+    useEffect (() => {
+        setFilteredMonsters(monsters)
+    }, [monsters])
+
+    const updateCr = (cr) => {
+        setCr(cr)
     }
+
 
 
     const getMonsters = () => {
@@ -61,9 +63,9 @@ const MonsterContainer = () => {
     return (
         <>
 
-                <MonsterSelect monsters= {monsters} onMonsterSelected = 
-                {onMonsterSelected}/>
-                <MonsterSelectByCr getMonstersByCr = {getMonstersByCr}/>
+                <MonsterSelect onMonsterSelected = 
+                {onMonsterSelected} filteredMonsters = {filteredMonsters}/>
+                <MonsterSelectByCr updateCr = {updateCr}/>
                 {selectedMonster ? <MonsterDetail mon = {selectedMonster} /> : null }
         </>
     )

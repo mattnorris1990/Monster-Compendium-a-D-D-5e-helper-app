@@ -1,18 +1,18 @@
 import React from "react"
 
-const MonsterSelectByCr = ({getMonstersByCr}) => {
+const MonsterSelectByCr = ({updateCr}) => {
 
     const handleSelect = (event) => {
-        getMonstersByCr(event.target.value)
+        updateCr(event.target.value)
     }
 
     return (
         <>
-            <select onChange={handleSelect} defaultValue="Challenge Rating">
+            <select onChange={handleSelect}>
                 <option value= "0">0</option>
-                <option value= "1/8">1/8</option>
-                <option value= "1/4">1/4</option>
-                <option value= "1/2">1/2</option>
+                <option value= "0.125">1/8</option>
+                <option value= "0.25">1/4</option>
+                <option value= "0.5">1/2</option>
                 <option value= "1">1</option>
                 <option value= "2">2</option>
                 <option value= "3">3</option>

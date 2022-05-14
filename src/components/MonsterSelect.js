@@ -1,12 +1,12 @@
 import React from "react"
 
-const MonsterSelect = ({monsters, onMonsterSelected}) => {
+const MonsterSelect = ({onMonsterSelected, filteredMonsters}) => {
 
     const handleSelect = (event) => {
         onMonsterSelected(event.target.value)
     }
 
-    const monsterItems = monsters.map((monster, index) => {
+    const monsterItems = filteredMonsters.map((monster, index) => {
         return (
             <option value={index}>
                 {monster.name}
