@@ -7,7 +7,6 @@ const MonsterContainer = () => {
 
     const [monstersLinksArray, setMonstersLinksArray] = useState([])
     const [selectedMonster, setSelectedMonster] = useState(null)
-    const [selectedMonsterDetails, setSelectedMonsterDetails] =useState(null)
     const [monsters, setMonsters] = useState([])
     const [filteredMonsters, setFilteredMonsters] = useState([])
     const [cr, setCr] = useState(null)

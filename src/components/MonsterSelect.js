@@ -16,7 +16,8 @@ const MonsterSelect = ({onMonsterSelected, filteredMonsters}) => {
 
     return (
         <>
-            <select onChange={handleSelect} defaultValue="Choose a monster">
+            <select onChange={handleSelect} value="Choose a monster">
+                <option value = "">choose a monster</option>
                 {monsterItems}
             </select>
         </>
