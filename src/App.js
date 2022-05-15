@@ -85,20 +85,21 @@ function App() {
     }
 
 
-  return (
+    return (
     <>
     <div className="App">
-      <heading class="nav">
+        <heading class="nav">
         <img src={logo} className="logo"/>
-        <h1>Dungeons & Dragons Monsters Compendium</h1>
-      </heading>
-      
-      {filteredMonsters.length ? <MonsterContainer onMonsterSelected = {onMonsterSelected} filteredMonsters = {filteredMonsters} updateCr = {updateCr} selectedMonster = {selectedMonster} /> : <AppLoading/> }
+        <h1>Dungeons & Dragons Monsters Compendium
+        <hr className ="heading-rule"/></h1>
+        </heading>
+        
+        {filteredMonsters.length ? <MonsterContainer onMonsterSelected = {onMonsterSelected} filteredMonsters = {filteredMonsters} updateCr = {updateCr} selectedMonster = {selectedMonster} /> : <AppLoading/> }
     </div>
-  
+
     </>
-  );
-  
+    );
+
 }
 
 export default App;
