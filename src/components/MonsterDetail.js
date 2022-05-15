@@ -33,6 +33,26 @@ const MonsterDetail = ({mon}) => {
 
     })
 
+    const calcMod = (stat) => {
+        if (stat %2 == 0) {
+            let value = (stat-10) / 2
+            
+            if (stat < 10) {
+                return value
+            } else {
+                return "+" + value
+            }
+        }
+        else {
+            let value = (stat-11) / 2
+            if (stat < 10) {
+                return value
+            } else {
+                return "+" + value
+        }
+    }
+    }
+
 
 
     return (
@@ -53,27 +73,27 @@ const MonsterDetail = ({mon}) => {
                 <hr />
                 <div className ="block-stats">
                     <div className="stat">
-                        <p className= "stat-name">STR</p> <p className= "stat-value">{mon.strength}</p>
+                        <p className= "stat-name">STR</p> <p className= "stat-value">{mon.strength} ({calcMod(mon.strength)})</p>
                     </div>
 
                     <div className="stat">
-                        <p className= "stat-name">DEX</p> <p className= "stat-value">{mon.dexterity}</p>
+                        <p className= "stat-name">DEX</p> <p className= "stat-value">{mon.dexterity} ({calcMod(mon.dexterity)})</p>
                     </div>
 
                     <div className="stat">
-                        <p className= "stat-name">CON</p> <p className= "stat-value">{mon.constitution}</p>
+                        <p className= "stat-name">CON</p> <p className= "stat-value">{mon.constitution} ({calcMod(mon.constitution)})</p>
                     </div>
 
                     <div className="stat">
-                        <p className= "stat-name">INT</p> <p className= "stat-value">{mon.intelligence}</p>
+                        <p className= "stat-name">INT</p> <p className= "stat-value">{mon.intelligence} ({calcMod(mon.intelligence)})</p>
                     </div>
 
                     <div className="stat">
-                        <p className= "stat-name">WIS</p> <p className= "stat-value">{mon.wisdom}</p>
+                        <p className= "stat-name">WIS</p> <p className= "stat-value">{mon.wisdom} ({calcMod(mon.wisdom)})</p>
                     </div>
 
                     <div className="stat">
-                        <p className= "stat-name">CHA</p> <p className= "stat-value">{mon.charisma}</p>
+                        <p className= "stat-name">CHA</p> <p className= "stat-value">{mon.charisma} ({calcMod(mon.charisma)})</p>
                     </div>
                 </div>
                 <hr />

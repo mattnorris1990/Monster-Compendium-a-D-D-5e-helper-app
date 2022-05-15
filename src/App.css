@@ -1,3 +1,8 @@
+body {
+  background-color: #282c34;
+  text-align: center;
+}
+
 .App {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color: #282c34;
@@ -5,30 +10,29 @@
   color: white;
 }
 
+.nav {
+  margin-bottom: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  height: 10vmin;
+}
+
 .monsterContainer {
   margin: 0;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 2s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -42,6 +46,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.dropdowns {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+}
+
+.monster-select {
+  color: #922610;
+  background-color: #FDF1DC;
+  padding: 3px;
+  border: 3px solid #922610;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.cr-select {
+  display: flex;
 }
 
 .stat-block {
@@ -59,13 +83,17 @@
 .block-stats {
   display: flex;
   justify-content: center;
-  gap: 2%;
+  gap: 3%;
+}
+
+.stat-name {
+  text-align: center;
 }
 
 .stat {
   border: 2px solid #922610;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 hr {
