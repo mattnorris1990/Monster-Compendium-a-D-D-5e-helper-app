@@ -8,9 +8,12 @@ const MonsterContainer = ({selectedMonster, filteredMonsters, onMonsterSelected,
     return (
         <>
             <div className="dropdowns">
+                
+                <MonsterSelectByCr updateCr = {updateCr}/>
+                
                 <MonsterSelect onMonsterSelected = 
                 {onMonsterSelected} filteredMonsters = {filteredMonsters}/>
-                <MonsterSelectByCr updateCr = {updateCr}/>
+                
                 
             </div>
             {selectedMonster ? <MonsterDetail mon = {selectedMonster} /> : null }

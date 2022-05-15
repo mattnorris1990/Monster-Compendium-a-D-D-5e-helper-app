@@ -5,7 +5,7 @@ const MonsterDetail = ({mon}) => {
     
 
     const proficiencyItems = mon.proficiencies.map((res) => {
-        return res.proficiency.name
+        return res.proficiency.name + " "
     }) 
 
     const condImmunityItems = mon.condition_immunities.map((res) => {

@@ -16,11 +16,13 @@ const MonsterSelect = ({onMonsterSelected, filteredMonsters}) => {
 
     return (
         <>
-            
-            <select onChange={handleSelect} className="monster-select">
-                <option value = "">choose a monster</option>
-                {monsterItems}
-            </select>
+            <div className="cr-select">
+                <h3>select monster:</h3>
+                <select onChange={handleSelect} className="monster-select">
+                    <option value = "">choose a monster</option>
+                    {monsterItems}
+                </select>
+            </div>
         </>
     )
 }
