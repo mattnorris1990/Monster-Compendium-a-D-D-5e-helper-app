@@ -62,6 +62,12 @@
   gap: 2%;
 }
 
+.stat {
+  border: 2px solid #922610;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
 hr {
   border: 1px solid #922610;
   
@@ -69,5 +75,10 @@ hr {
 
 .stat-name {
   font-weight: bold;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.stat-value {
+  text-align: center;
   font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

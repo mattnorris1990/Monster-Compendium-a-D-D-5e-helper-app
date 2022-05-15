@@ -9,8 +9,9 @@ const MonsterSelectByCr = ({updateCr}) => {
     return (
         <>
             <select onChange={handleSelect}>
+                <option value="all">all</option>
                 <option value= "0">0</option>
-                <option value= "0.125">0.125</option>
+                <option value= "0.125">1/8</option>
                 <option value= "0.25">1/4</option>
                 <option value= "0.5">1/2</option>
                 <option value= "1">1</option>

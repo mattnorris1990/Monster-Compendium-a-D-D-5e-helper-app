@@ -17,10 +17,16 @@ const MonsterContainer = () => {
     }, [])
 
     useEffect(() => {
-        const results = monsters.filter((monster) => {
+
+        if (cr !== "all") {
+            const results = monsters.filter((monster) => {
                 return monster.challenge_rating == cr
             })
             setFilteredMonsters(results)
+        } else {
+            setFilteredMonsters(monsters)
+        }
+            
     }, [cr])
 
     useEffect (() => {
