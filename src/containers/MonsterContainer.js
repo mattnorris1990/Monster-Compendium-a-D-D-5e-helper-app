@@ -33,6 +33,10 @@ const MonsterContainer = () => {
         setFilteredMonsters(monsters)
     }, [monsters])
 
+    useEffect(() => {
+        getMonsterDetails()
+    }, [monsters])
+
     const updateCr = (cr) => {
         setCr(cr)
     }
@@ -43,8 +47,21 @@ const MonsterContainer = () => {
         fetch("https://www.dnd5eapi.co/api/monsters")
         .then(res => res.json())
         .then(monsters => setMonstersLinksArray(monsters.results))
-        .then(() => {
-            const promisesArray = monstersLinksArray.map((monster) => {
+        // .then(() => {
+        //     const promisesArray = monstersLinksArray.map((monster) => {
+        //         return fetch(getMonsterUrl(monster))
+        //         .then(res => (res.json()))
+                
+        //     })
+            
+        //     Promise.all(promisesArray).then(res => setMonsters(res))
+        //     .catch(error => console.error(error))
+        // })
+    }
+
+
+    const getMonsterDetails = () => {
+        const promisesArray = monstersLinksArray.map((monster) => {
                 return fetch(getMonsterUrl(monster))
                 .then(res => (res.json()))
                 
@@ -52,7 +69,6 @@ const MonsterContainer = () => {
             
             Promise.all(promisesArray).then(res => setMonsters(res))
             .catch(error => console.error(error))
-        })
     }
 
 

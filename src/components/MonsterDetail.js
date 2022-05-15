@@ -8,7 +8,7 @@ const MonsterDetail = ({mon}) => {
     }) 
 
     const condImmunityItems = mon.condition_immunities.map((res) => {
-        return res.name + ", "
+        return res.name
     }) 
 
     const specialAbilityItems = mon.special_abilities.map((res) => {
